@@ -7,14 +7,14 @@
 }
 
 :root {
-  --sumi: #161614;
-  --tetsu: #252420;
-  --koke: #323028;
-  --hai: #6e6b62;
-  --washi: #e8e4da;
-  --nuno: #b8b4aa;
-  --terr: #7a5c4a;
-  --silver: #8a8a87;
+  --shikkui: #F2EDE3;
+  --washi: #EAE4D8;
+  --nuno: #D4CCBA;
+  --ki: #A07848;
+  --tsuchi: #7A5A35;
+  --hai: #9A9080;
+  --sumi: #2C2418;
+  --vault-ao: #5A9498;
   --serif: "Cormorant Garamond", serif;
   --jp: "Noto Serif JP", serif;
   --gothic: "Zen Kaku Gothic New", sans-serif;
@@ -24,8 +24,8 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background: var(--sumi);
-  color: var(--washi);
+  background: var(--shikkui);
+  color: var(--sumi);
   font-family: var(--jp);
   font-weight: 300;
   overflow-x: hidden;
@@ -35,7 +35,7 @@ body {
   width: 3px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--sumi);
+  background: var(--shikkui);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--hai);
@@ -53,17 +53,17 @@ nav {
   padding: 1.4rem 2.8rem;
   background: linear-gradient(
     to bottom,
-    rgba(22, 22, 20, 0.85),
+    rgba(242, 237, 227, 0.92),
     transparent
   );
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(4px);
 }
 .nav-logo {
   font-family: var(--jp);
   font-weight: 200;
   font-size: 1rem;
   letter-spacing: 0.4em;
-  color: var(--washi);
+  color: var(--sumi);
   text-decoration: none;
 }
 .nav-links {
@@ -81,7 +81,7 @@ nav {
   transition: color 0.3s;
 }
 .nav-links a:hover {
-  color: var(--washi);
+  color: var(--sumi);
 }
 
 #hero {
@@ -98,21 +98,21 @@ nav {
   background:
     radial-gradient(
       ellipse at 20% 80%,
-      rgba(122, 92, 74, 0.1) 0%,
+      rgba(160, 120, 72, 0.1) 0%,
       transparent 55%
     ),
     radial-gradient(
       ellipse at 75% 30%,
-      rgba(110, 107, 98, 0.07) 0%,
+      rgba(90, 148, 152, 0.06) 0%,
       transparent 45%
     ),
-    linear-gradient(170deg, #1a1916 0%, #161614 60%, #111110 100%);
+    linear-gradient(170deg, #EDE8DC 0%, #F2EDE3 60%, #F5F0E8 100%);
 }
 .hero-bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
 }
 .hero-kanji {
@@ -124,7 +124,7 @@ nav {
   font-weight: 200;
   font-size: clamp(10rem, 22vw, 19rem);
   color: transparent;
-  -webkit-text-stroke: 1px rgba(232, 228, 218, 0.055);
+  -webkit-text-stroke: 1px rgba(44, 36, 24, 0.07);
   writing-mode: vertical-lr;
   text-orientation: mixed;
   user-select: none;
@@ -166,10 +166,11 @@ nav {
   line-height: 1.08;
   letter-spacing: 0.01em;
   margin-bottom: 0.8rem;
+  color: var(--sumi);
 }
 .hero-title em {
   font-style: italic;
-  color: var(--nuno);
+  color: var(--ki);
 }
 .hero-subtitle-jp {
   font-family: var(--jp);
@@ -182,7 +183,7 @@ nav {
 .hero-tagline {
   font-size: 0.85rem;
   line-height: 2.1;
-  color: var(--nuno);
+  color: var(--tsuchi);
   font-weight: 200;
   max-width: 380px;
   margin-bottom: 2.8rem;
@@ -196,9 +197,9 @@ nav {
   font-size: 0.65rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--nuno);
+  color: var(--ki);
   text-decoration: none;
-  border-bottom: 1px solid rgba(184, 180, 170, 0.4);
+  border-bottom: 1px solid rgba(160, 120, 72, 0.4);
   padding-bottom: 0.35rem;
   transition:
     color 0.3s,
@@ -206,9 +207,9 @@ nav {
     border-color 0.3s;
 }
 .hero-cta:hover {
-  color: var(--washi);
+  color: var(--tsuchi);
   gap: 1.3rem;
-  border-color: var(--washi);
+  border-color: var(--tsuchi);
 }
 
 .scroll-indicator {
@@ -250,8 +251,8 @@ nav {
 }
 
 #brands {
-  background: var(--tetsu);
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  background: var(--washi);
+  border-top: 1px solid rgba(44, 36, 24, 0.08);
 }
 .brands-wrap {
   display: grid;
@@ -261,21 +262,21 @@ nav {
   position: relative;
   padding: 4rem 4vw 3.5rem;
   overflow: hidden;
-  border-right: 1px solid rgba(255, 255, 255, 0.04);
+  border-right: 1px solid rgba(44, 36, 24, 0.08);
   transition: background 0.5s;
 }
 .brand-panel:last-child {
   border-right: none;
 }
 .brand-panel:hover {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(44, 36, 24, 0.02);
 }
 .brand-panel-num {
   font-family: var(--serif);
   font-size: 5rem;
   font-weight: 300;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(232, 228, 218, 0.06);
+  -webkit-text-stroke: 1px rgba(44, 36, 24, 0.08);
   position: absolute;
   top: 1rem;
   right: 2rem;
@@ -298,10 +299,10 @@ nav {
   display: block;
   width: 1rem;
   height: 1px;
-  background: var(--terr);
+  background: var(--ki);
 }
 .vault-tag::before {
-  background: var(--silver);
+  background: var(--vault-ao);
 }
 .brand-panel-name {
   font-family: var(--serif);
@@ -310,6 +311,7 @@ nav {
   line-height: 1.1;
   margin-bottom: 1.2rem;
   letter-spacing: 0.02em;
+  color: var(--sumi);
 }
 .brand-panel-desc {
   font-size: 0.82rem;
@@ -328,20 +330,27 @@ nav {
   letter-spacing: 0.25em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--nuno);
+  color: var(--ki);
   transition:
     gap 0.3s,
     color 0.3s;
-  border-bottom: 1px solid rgba(184, 180, 170, 0.3);
+  border-bottom: 1px solid rgba(160, 120, 72, 0.4);
   padding-bottom: 0.3rem;
+}
+.vault-panel .brand-link {
+  color: var(--vault-ao);
+  border-bottom-color: rgba(90, 148, 152, 0.4);
 }
 .brand-link:hover {
   gap: 1rem;
-  color: var(--washi);
+  color: var(--tsuchi);
+}
+.vault-panel .brand-link:hover {
+  color: #3D7880;
 }
 
 #pickup {
-  background: var(--sumi);
+  background: var(--shikkui);
   padding: 5rem 0;
 }
 .section-inner {
@@ -355,7 +364,7 @@ nav {
   align-items: flex-end;
   margin-bottom: 3rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(44, 36, 24, 0.08);
 }
 .section-label {
   font-family: var(--gothic);
@@ -370,6 +379,7 @@ nav {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 300;
   letter-spacing: 0.04em;
+  color: var(--sumi);
 }
 .section-all-link {
   font-family: var(--gothic);
@@ -386,7 +396,7 @@ nav {
     gap 0.3s;
 }
 .section-all-link:hover {
-  color: var(--washi);
+  color: var(--ki);
   gap: 0.9rem;
 }
 
@@ -394,10 +404,10 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr 2.5rem 1fr 1fr;
   gap: 1px;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(44, 36, 24, 0.08);
 }
 .items-grid .brand-spacer {
-  background: var(--sumi);
+  background: var(--shikkui);
   position: relative;
 }
 .items-grid .brand-spacer::after {
@@ -408,16 +418,16 @@ nav {
   transform: translateX(-50%);
   width: 1px;
   height: 80%;
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(44, 36, 24, 0.1);
 }
 .item-card {
-  background: var(--sumi);
+  background: var(--shikkui);
   overflow: hidden;
   cursor: pointer;
   transition: background 0.3s;
 }
 .item-card:hover {
-  background: var(--tetsu);
+  background: var(--washi);
 }
 .item-img {
   aspect-ratio: 3/4;
@@ -436,19 +446,19 @@ nav {
   transform: scale(1.03);
 }
 .c1 {
-  background: linear-gradient(145deg, #2c2218, #3a2d22);
+  background: linear-gradient(145deg, #E8DDD0, #D8CCBA);
 }
 .c2 {
-  background: linear-gradient(145deg, #261e18, #321e14);
+  background: linear-gradient(145deg, #E0D4C4, #CEBFA8);
 }
 .c3 {
-  background: linear-gradient(145deg, #1a2e2e, #1f3a38);
+  background: linear-gradient(145deg, #CCDAD8, #BECCCA);
 }
 .c4 {
-  background: linear-gradient(145deg, #151f20, #1c2d2d);
+  background: linear-gradient(145deg, #C4D0D2, #B4C4C8);
 }
 .img-icon {
-  opacity: 0.18;
+  opacity: 0.4;
 }
 .item-badge {
   position: absolute;
@@ -462,14 +472,14 @@ nav {
   border: 1px solid;
 }
 .tora-badge {
-  color: var(--terr);
-  border-color: rgba(122, 92, 74, 0.4);
-  background: rgba(22, 22, 20, 0.7);
+  color: var(--ki);
+  border-color: rgba(160, 120, 72, 0.5);
+  background: rgba(242, 237, 227, 0.85);
 }
 .vault-badge {
-  color: var(--silver);
-  border-color: rgba(138, 138, 135, 0.3);
-  background: rgba(22, 22, 20, 0.7);
+  color: var(--vault-ao);
+  border-color: rgba(90, 148, 152, 0.4);
+  background: rgba(242, 237, 227, 0.85);
 }
 .item-info {
   padding: 1rem 1.2rem 1.4rem;
@@ -478,14 +488,14 @@ nav {
   font-size: 0.78rem;
   font-weight: 300;
   letter-spacing: 0.06em;
-  color: var(--nuno);
+  color: var(--hai);
   margin-bottom: 0.4rem;
 }
 .item-price {
   font-family: var(--serif);
   font-size: 1.05rem;
   font-weight: 300;
-  color: var(--washi);
+  color: var(--sumi);
 }
 .item-price-sub {
   font-family: var(--gothic);
@@ -496,9 +506,9 @@ nav {
 }
 
 #about {
-  background: var(--koke);
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  background: var(--nuno);
+  border-top: 1px solid rgba(44, 36, 24, 0.08);
+  border-bottom: 1px solid rgba(44, 36, 24, 0.08);
 }
 .about-strip {
   display: grid;
@@ -506,7 +516,7 @@ nav {
 }
 .about-strip > * {
   padding: 3.5rem 3.5vw;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(44, 36, 24, 0.08);
 }
 .about-strip > *:last-child {
   border-right: none;
@@ -525,10 +535,11 @@ nav {
   font-weight: 300;
   line-height: 1.5;
   letter-spacing: 0.03em;
+  color: var(--sumi);
 }
 .about-main-text em {
   font-style: italic;
-  color: var(--nuno);
+  color: var(--ki);
 }
 .about-body-text {
   font-size: 0.8rem;
@@ -544,17 +555,17 @@ nav {
   font-size: 0.58rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--nuno);
+  color: var(--ki);
   text-decoration: none;
   margin-top: 1.5rem;
-  border-bottom: 1px solid rgba(184, 180, 170, 0.3);
+  border-bottom: 1px solid rgba(160, 120, 72, 0.4);
   padding-bottom: 0.25rem;
   transition:
     color 0.3s,
     gap 0.3s;
 }
 .about-detail-link:hover {
-  color: var(--washi);
+  color: var(--tsuchi);
   gap: 0.9rem;
 }
 .about-stats {
@@ -566,7 +577,7 @@ nav {
   font-family: var(--serif);
   font-size: 1.6rem;
   font-weight: 300;
-  color: var(--nuno);
+  color: var(--ki);
   line-height: 1;
   margin-bottom: 0.3rem;
 }
@@ -578,8 +589,62 @@ nav {
   color: var(--hai);
 }
 
+#history {
+  background: var(--shikkui);
+  padding: 5rem 0;
+  border-top: 1px solid rgba(44, 36, 24, 0.08);
+}
+.history-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5rem;
+  margin-top: 2.5rem;
+}
+.history-aside {
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--sumi);
+  letter-spacing: 0.04em;
+}
+.history-aside em {
+  font-style: italic;
+  color: var(--ki);
+}
+.history-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.history-entry {
+  padding-left: 1.5rem;
+  border-left: 1px solid rgba(160, 120, 72, 0.3);
+}
+.history-year {
+  font-family: var(--serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--ki);
+  margin-bottom: 0.4rem;
+}
+.history-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--sumi);
+  margin-bottom: 0.6rem;
+}
+.history-text {
+  font-size: 0.82rem;
+  line-height: 2.2;
+  color: var(--hai);
+  font-weight: 200;
+}
+
 #store {
-  background: var(--tetsu);
+  background: var(--washi);
+  border-top: 1px solid rgba(44, 36, 24, 0.08);
 }
 .store-bar {
   display: flex;
@@ -601,11 +666,12 @@ nav {
   font-size: 1.5rem;
   font-weight: 300;
   letter-spacing: 0.08em;
+  color: var(--sumi);
 }
 .store-divider {
   width: 1px;
   height: 3rem;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(44, 36, 24, 0.12);
   flex-shrink: 0;
 }
 .store-info-items {
@@ -626,7 +692,7 @@ nav {
   font-size: 0.8rem;
   font-weight: 200;
   line-height: 1.8;
-  color: var(--nuno);
+  color: var(--sumi);
 }
 .store-map-link {
   margin-left: auto;
@@ -634,9 +700,9 @@ nav {
   font-size: 0.6rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--nuno);
+  color: var(--ki);
   text-decoration: none;
-  border: 1px solid rgba(184, 180, 170, 0.2);
+  border: 1px solid rgba(160, 120, 72, 0.3);
   padding: 0.8rem 1.5rem;
   display: flex;
   align-items: center;
@@ -647,13 +713,13 @@ nav {
     color 0.3s;
 }
 .store-map-link:hover {
-  border-color: var(--nuno);
-  color: var(--washi);
+  border-color: var(--ki);
+  color: var(--tsuchi);
 }
 
 footer {
-  background: var(--sumi);
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  background: var(--nuno);
+  border-top: 1px solid rgba(44, 36, 24, 0.08);
   padding: 2rem 4vw;
   display: flex;
   justify-content: space-between;
@@ -664,14 +730,14 @@ footer {
   font-weight: 200;
   font-size: 0.9rem;
   letter-spacing: 0.5em;
-  color: var(--hai);
+  color: var(--sumi);
 }
 .footer-copy {
   font-family: var(--gothic);
   font-size: 0.55rem;
   letter-spacing: 0.15em;
   color: var(--hai);
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .footer-links {
   display: flex;
@@ -687,7 +753,7 @@ footer {
   transition: color 0.3s;
 }
 .footer-links a:hover {
-  color: var(--nuno);
+  color: var(--ki);
 }
 
 @keyframes fadeUp {
@@ -731,7 +797,7 @@ footer {
   }
   .brand-panel {
     border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(44, 36, 24, 0.08);
   }
   .items-grid {
     grid-template-columns: 1fr 1fr;
@@ -744,8 +810,12 @@ footer {
   }
   .about-strip > * {
     border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(44, 36, 24, 0.08);
     padding: 2.5rem 5vw;
+  }
+  .history-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
   .store-bar {
     flex-direction: column;
