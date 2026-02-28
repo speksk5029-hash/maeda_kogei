@@ -10,8 +10,8 @@
   --shikkui: #F2EDE3;
   --washi: #EAE4D8;
   --nuno: #D4CCBA;
-  --ki: #A07848;
-  --tsuchi: #7A5A35;
+  --ki: #896644;
+  --tsuchi: #6B4E30;
   --hai: #9A9080;
   --sumi: #2C2418;
   --vault-ao: #5A9498;
@@ -446,16 +446,16 @@ nav {
   transform: scale(1.03);
 }
 .c1 {
-  background: linear-gradient(145deg, #E8DDD0, #D8CCBA);
+  background: linear-gradient(145deg, #EDD5B8, #D9BC98);
 }
 .c2 {
-  background: linear-gradient(145deg, #E0D4C4, #CEBFA8);
+  background: linear-gradient(145deg, #E5CCA8, #CFAF85);
 }
 .c3 {
-  background: linear-gradient(145deg, #CCDAD8, #BECCCA);
+  background: linear-gradient(145deg, #B8D8D6, #9EC8C4);
 }
 .c4 {
-  background: linear-gradient(145deg, #C4D0D2, #B4C4C8);
+  background: linear-gradient(145deg, #A4CCCE, #8EBBBD);
 }
 .img-icon {
   opacity: 0.4;
