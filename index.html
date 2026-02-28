@@ -1,0 +1,1070 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前田工芸 | Maeda Kogei</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Serif+JP:wght@200;300;400&family=Zen+Kaku+Gothic+New:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --sumi: #161614;
+        --tetsu: #252420;
+        --koke: #323028;
+        --hai: #6e6b62;
+        --washi: #e8e4da;
+        --nuno: #b8b4aa;
+        --terr: #7a5c4a;
+        --silver: #8a8a87;
+        --serif: "Cormorant Garamond", serif;
+        --jp: "Noto Serif JP", serif;
+        --gothic: "Zen Kaku Gothic New", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--sumi);
+        color: var(--washi);
+        font-family: var(--jp);
+        font-weight: 300;
+        overflow-x: hidden;
+      }
+
+      ::-webkit-scrollbar {
+        width: 3px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--sumi);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--hai);
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.4rem 2.8rem;
+        background: linear-gradient(
+          to bottom,
+          rgba(22, 22, 20, 0.85),
+          transparent
+        );
+        backdrop-filter: blur(1px);
+      }
+      .nav-logo {
+        font-family: var(--jp);
+        font-weight: 200;
+        font-size: 1rem;
+        letter-spacing: 0.4em;
+        color: var(--washi);
+        text-decoration: none;
+      }
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+      }
+      .nav-links a {
+        font-family: var(--gothic);
+        font-size: 0.65rem;
+        letter-spacing: 0.25em;
+        color: var(--hai);
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover {
+        color: var(--washi);
+      }
+
+      #hero {
+        position: relative;
+        height: 100vh;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse at 20% 80%,
+            rgba(122, 92, 74, 0.1) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse at 75% 30%,
+            rgba(110, 107, 98, 0.07) 0%,
+            transparent 45%
+          ),
+          linear-gradient(170deg, #1a1916 0%, #161614 60%, #111110 100%);
+      }
+      .hero-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+        pointer-events: none;
+      }
+      .hero-kanji {
+        position: absolute;
+        right: 4vw;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: var(--jp);
+        font-weight: 200;
+        font-size: clamp(10rem, 22vw, 19rem);
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(232, 228, 218, 0.055);
+        writing-mode: vertical-lr;
+        text-orientation: mixed;
+        user-select: none;
+        pointer-events: none;
+        letter-spacing: 0.1em;
+        animation: fadeIn 3s ease forwards;
+        opacity: 0;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 0 5vw;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 1.2s ease forwards 0.4s;
+      }
+      .hero-eyebrow {
+        font-family: var(--gothic);
+        font-size: 0.6rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--hai);
+        margin-bottom: 1.8rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+      .hero-eyebrow::before {
+        content: "";
+        display: block;
+        width: 1.8rem;
+        height: 1px;
+        background: var(--hai);
+      }
+      .hero-title {
+        font-family: var(--serif);
+        font-size: clamp(3.2rem, 7.5vw, 6.5rem);
+        font-weight: 300;
+        line-height: 1.08;
+        letter-spacing: 0.01em;
+        margin-bottom: 0.8rem;
+      }
+      .hero-title em {
+        font-style: italic;
+        color: var(--nuno);
+      }
+      .hero-subtitle-jp {
+        font-family: var(--jp);
+        font-size: clamp(0.75rem, 1.5vw, 1rem);
+        font-weight: 200;
+        letter-spacing: 0.55em;
+        color: var(--hai);
+        margin-bottom: 2.5rem;
+      }
+      .hero-tagline {
+        font-size: 0.85rem;
+        line-height: 2.1;
+        color: var(--nuno);
+        font-weight: 200;
+        max-width: 380px;
+        margin-bottom: 2.8rem;
+        letter-spacing: 0.04em;
+      }
+      .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-family: var(--gothic);
+        font-size: 0.65rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--nuno);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(184, 180, 170, 0.4);
+        padding-bottom: 0.35rem;
+        transition:
+          color 0.3s,
+          gap 0.3s,
+          border-color 0.3s;
+      }
+      .hero-cta:hover {
+        color: var(--washi);
+        gap: 1.3rem;
+        border-color: var(--washi);
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+        opacity: 0;
+        animation: fadeIn 2s ease forwards 1.8s;
+      }
+      .scroll-indicator span {
+        font-family: var(--gothic);
+        font-size: 0.55rem;
+        letter-spacing: 0.3em;
+        color: var(--hai);
+        text-transform: uppercase;
+      }
+      .scroll-track {
+        width: 1px;
+        height: 2.5rem;
+        background: linear-gradient(to bottom, var(--hai), transparent);
+        animation: scrollDrop 2s ease-in-out infinite;
+      }
+      @keyframes scrollDrop {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scaleY(0.6);
+          transform-origin: top;
+        }
+        50% {
+          opacity: 1;
+          transform: scaleY(1);
+        }
+      }
+
+      #brands {
+        background: var(--tetsu);
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      .brands-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .brand-panel {
+        position: relative;
+        padding: 4rem 4vw 3.5rem;
+        overflow: hidden;
+        border-right: 1px solid rgba(255, 255, 255, 0.04);
+        transition: background 0.5s;
+      }
+      .brand-panel:last-child {
+        border-right: none;
+      }
+      .brand-panel:hover {
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .brand-panel-num {
+        font-family: var(--serif);
+        font-size: 5rem;
+        font-weight: 300;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(232, 228, 218, 0.06);
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+        user-select: none;
+        line-height: 1;
+      }
+      .brand-panel-tag {
+        font-family: var(--gothic);
+        font-size: 0.58rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: var(--hai);
+        margin-bottom: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      .brand-panel-tag::before {
+        content: "";
+        display: block;
+        width: 1rem;
+        height: 1px;
+        background: var(--terr);
+      }
+      .vault-tag::before {
+        background: var(--silver);
+      }
+      .brand-panel-name {
+        font-family: var(--serif);
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        font-weight: 300;
+        line-height: 1.1;
+        margin-bottom: 1.2rem;
+        letter-spacing: 0.02em;
+      }
+      .brand-panel-desc {
+        font-size: 0.82rem;
+        line-height: 2;
+        color: var(--hai);
+        font-weight: 200;
+        margin-bottom: 2rem;
+        max-width: 380px;
+      }
+      .brand-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-family: var(--gothic);
+        font-size: 0.6rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--nuno);
+        transition:
+          gap 0.3s,
+          color 0.3s;
+        border-bottom: 1px solid rgba(184, 180, 170, 0.3);
+        padding-bottom: 0.3rem;
+      }
+      .brand-link:hover {
+        gap: 1rem;
+        color: var(--washi);
+      }
+
+      #pickup {
+        background: var(--sumi);
+        padding: 5rem 0;
+      }
+      .section-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 4vw;
+      }
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 3rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .section-label {
+        font-family: var(--gothic);
+        font-size: 0.6rem;
+        letter-spacing: 0.45em;
+        text-transform: uppercase;
+        color: var(--hai);
+        margin-bottom: 0.6rem;
+      }
+      .section-title {
+        font-family: var(--serif);
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        font-weight: 300;
+        letter-spacing: 0.04em;
+      }
+      .section-all-link {
+        font-family: var(--gothic);
+        font-size: 0.6rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--hai);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition:
+          color 0.3s,
+          gap 0.3s;
+      }
+      .section-all-link:hover {
+        color: var(--washi);
+        gap: 0.9rem;
+      }
+
+      .items-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 2.5rem 1fr 1fr;
+        gap: 1px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+      .items-grid .brand-spacer {
+        background: var(--sumi);
+        position: relative;
+      }
+      .items-grid .brand-spacer::after {
+        content: "";
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        height: 80%;
+        background: rgba(255, 255, 255, 0.07);
+      }
+      .item-card {
+        background: var(--sumi);
+        overflow: hidden;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .item-card:hover {
+        background: var(--tetsu);
+      }
+      .item-img {
+        aspect-ratio: 3/4;
+        overflow: hidden;
+        position: relative;
+      }
+      .item-img-inner {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.6s ease;
+      }
+      .item-card:hover .item-img-inner {
+        transform: scale(1.03);
+      }
+      .c1 {
+        background: linear-gradient(145deg, #2c2218, #3a2d22);
+      }
+      .c2 {
+        background: linear-gradient(145deg, #261e18, #321e14);
+      }
+      .c3 {
+        background: linear-gradient(145deg, #1a2e2e, #1f3a38);
+      }
+      .c4 {
+        background: linear-gradient(145deg, #151f20, #1c2d2d);
+      }
+      .img-icon {
+        opacity: 0.18;
+      }
+      .item-badge {
+        position: absolute;
+        top: 0.8rem;
+        left: 0.8rem;
+        font-family: var(--gothic);
+        font-size: 0.5rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.55rem;
+        border: 1px solid;
+      }
+      .tora-badge {
+        color: var(--terr);
+        border-color: rgba(122, 92, 74, 0.4);
+        background: rgba(22, 22, 20, 0.7);
+      }
+      .vault-badge {
+        color: var(--silver);
+        border-color: rgba(138, 138, 135, 0.3);
+        background: rgba(22, 22, 20, 0.7);
+      }
+      .item-info {
+        padding: 1rem 1.2rem 1.4rem;
+      }
+      .item-name {
+        font-size: 0.78rem;
+        font-weight: 300;
+        letter-spacing: 0.06em;
+        color: var(--nuno);
+        margin-bottom: 0.4rem;
+      }
+      .item-price {
+        font-family: var(--serif);
+        font-size: 1.05rem;
+        font-weight: 300;
+        color: var(--washi);
+      }
+      .item-price-sub {
+        font-family: var(--gothic);
+        font-size: 0.5rem;
+        color: var(--hai);
+        margin-left: 0.3rem;
+        letter-spacing: 0.1em;
+      }
+
+      #about {
+        background: var(--koke);
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      .about-strip {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+      }
+      .about-strip > * {
+        padding: 3.5rem 3.5vw;
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .about-strip > *:last-child {
+        border-right: none;
+      }
+      .about-label {
+        font-family: var(--gothic);
+        font-size: 0.58rem;
+        letter-spacing: 0.45em;
+        text-transform: uppercase;
+        color: var(--hai);
+        margin-bottom: 1rem;
+      }
+      .about-main-text {
+        font-family: var(--serif);
+        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+        font-weight: 300;
+        line-height: 1.5;
+        letter-spacing: 0.03em;
+      }
+      .about-main-text em {
+        font-style: italic;
+        color: var(--nuno);
+      }
+      .about-body-text {
+        font-size: 0.8rem;
+        line-height: 2.2;
+        color: var(--hai);
+        font-weight: 200;
+      }
+      .about-detail-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--gothic);
+        font-size: 0.58rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--nuno);
+        text-decoration: none;
+        margin-top: 1.5rem;
+        border-bottom: 1px solid rgba(184, 180, 170, 0.3);
+        padding-bottom: 0.25rem;
+        transition:
+          color 0.3s,
+          gap 0.3s;
+      }
+      .about-detail-link:hover {
+        color: var(--washi);
+        gap: 0.9rem;
+      }
+      .about-stats {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+      }
+      .stat-val {
+        font-family: var(--serif);
+        font-size: 1.6rem;
+        font-weight: 300;
+        color: var(--nuno);
+        line-height: 1;
+        margin-bottom: 0.3rem;
+      }
+      .stat-key {
+        font-family: var(--gothic);
+        font-size: 0.55rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--hai);
+      }
+
+      #store {
+        background: var(--tetsu);
+      }
+      .store-bar {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        padding: 3rem 4vw;
+        flex-wrap: wrap;
+      }
+      .store-place-label {
+        font-family: var(--gothic);
+        font-size: 0.55rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: var(--hai);
+        margin-bottom: 0.5rem;
+      }
+      .store-place-name {
+        font-family: var(--serif);
+        font-size: 1.5rem;
+        font-weight: 300;
+        letter-spacing: 0.08em;
+      }
+      .store-divider {
+        width: 1px;
+        height: 3rem;
+        background: rgba(255, 255, 255, 0.08);
+        flex-shrink: 0;
+      }
+      .store-info-items {
+        display: flex;
+        gap: 3rem;
+        flex: 1;
+        flex-wrap: wrap;
+      }
+      .store-info-key {
+        font-family: var(--gothic);
+        font-size: 0.55rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--hai);
+        margin-bottom: 0.4rem;
+      }
+      .store-info-val {
+        font-size: 0.8rem;
+        font-weight: 200;
+        line-height: 1.8;
+        color: var(--nuno);
+      }
+      .store-map-link {
+        margin-left: auto;
+        font-family: var(--gothic);
+        font-size: 0.6rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--nuno);
+        text-decoration: none;
+        border: 1px solid rgba(184, 180, 170, 0.2);
+        padding: 0.8rem 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        white-space: nowrap;
+        transition:
+          border-color 0.3s,
+          color 0.3s;
+      }
+      .store-map-link:hover {
+        border-color: var(--nuno);
+        color: var(--washi);
+      }
+
+      footer {
+        background: var(--sumi);
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        padding: 2rem 4vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .footer-logo {
+        font-family: var(--jp);
+        font-weight: 200;
+        font-size: 0.9rem;
+        letter-spacing: 0.5em;
+        color: var(--hai);
+      }
+      .footer-copy {
+        font-family: var(--gothic);
+        font-size: 0.55rem;
+        letter-spacing: 0.15em;
+        color: var(--hai);
+        opacity: 0.6;
+      }
+      .footer-links {
+        display: flex;
+        gap: 2rem;
+      }
+      .footer-links a {
+        font-family: var(--gothic);
+        font-size: 0.58rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--hai);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .footer-links a:hover {
+        color: var(--nuno);
+      }
+
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+      .d1 {
+        transition-delay: 0.1s;
+      }
+      .d2 {
+        transition-delay: 0.2s;
+      }
+      .d3 {
+        transition-delay: 0.3s;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        .brands-wrap {
+          grid-template-columns: 1fr;
+        }
+        .brand-panel {
+          border-right: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .items-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .items-grid .brand-spacer {
+          display: none;
+        }
+        .about-strip {
+          grid-template-columns: 1fr;
+        }
+        .about-strip > * {
+          border-right: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+          padding: 2.5rem 5vw;
+        }
+        .store-bar {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 2rem;
+        }
+        .store-divider {
+          display: none;
+        }
+        .store-map-link {
+          margin-left: 0;
+        }
+        footer {
+          flex-direction: column;
+          gap: 1rem;
+          text-align: center;
+        }
+        .footer-links {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .hero-kanji {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#" class="nav-logo">前田工芸</a>
+      <ul class="nav-links">
+        <li><a href="#brands">Brands</a></li>
+        <li><a href="#pickup">Items</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#store">Store</a></li>
+      </ul>
+    </nav>
+
+    <section id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-kanji">工芸</div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Maeda Kogei — 山梨</p>
+        <h1 class="hero-title">
+          Crafting<br /><em>Stories</em><br />in Matter.
+        </h1>
+        <p class="hero-subtitle-jp">素材に宿る、職人の物語</p>
+        <p class="hero-tagline">
+          革を育て、銀を磨く。<br />ふたつのブランドが紡ぐ、手仕事の美学。
+        </p>
+        <a href="#brands" class="hero-cta">ブランドを見る →</a>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-track"></div>
+      </div>
+    </section>
+
+    <section id="brands">
+      <div class="brands-wrap">
+        <div class="brand-panel reveal">
+          <div class="brand-panel-num">01</div>
+          <p class="brand-panel-tag">Leather Craft</p>
+          <h2 class="brand-panel-name">Tora<br />Leather</h2>
+          <p class="brand-panel-desc">
+            フルグレインレザーを一点一点手縫いで仕立てる。使うほどに深みと艶を増す、育てる革製品。
+          </p>
+          <a
+            href="https://toraleather.handcrafted.jp/"
+            class="brand-link"
+            target="_blank"
+            >Shop →</a
+          >
+        </div>
+        <div class="brand-panel reveal d1">
+          <div class="brand-panel-num">02</div>
+          <p class="brand-panel-tag vault-tag">Silver Restoration</p>
+          <h2 class="brand-panel-name">Vault</h2>
+          <p class="brand-panel-desc">
+            ティファニーのヴィンテージシルバーを職人の手で磨き上げ、新たな輝きとして届ける。
+          </p>
+          <a
+            href="https://jp.mercari.com/user/profile/304380400"
+            class="brand-link"
+            target="_blank"
+            >Shop →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="pickup">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <p class="section-label reveal">Pickup Items</p>
+            <h2 class="section-title reveal d1">選ばれた一点</h2>
+          </div>
+          <a href="#brands" class="section-all-link reveal">全商品を見る →</a>
+        </div>
+        <div class="items-grid">
+          <div class="item-card reveal">
+            <div class="item-img">
+              <div class="item-img-inner c1">
+                <svg
+                  class="img-icon"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="0.6"
+                >
+                  <rect x="2" y="7" width="20" height="14" rx="2" />
+                  <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                </svg>
+              </div>
+              <span class="item-badge tora-badge">Tora Leather</span>
+            </div>
+            <div class="item-info">
+              <p class="item-name">Minimal Long Wallet</p>
+              <p class="item-price">
+                ¥28,000<span class="item-price-sub">税込</span>
+              </p>
+            </div>
+          </div>
+          <div class="item-card reveal d1">
+            <div class="item-img">
+              <div class="item-img-inner c2">
+                <svg
+                  class="img-icon"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="0.6"
+                >
+                  <path
+                    d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"
+                  />
+                  <circle cx="12" cy="12" r="2" />
+                </svg>
+              </div>
+              <span class="item-badge tora-badge">Tora Leather</span>
+            </div>
+            <div class="item-info">
+              <p class="item-name">Card Case — Bridle</p>
+              <p class="item-price">
+                ¥12,000<span class="item-price-sub">税込</span>
+              </p>
+            </div>
+          </div>
+          <div class="brand-spacer"></div>
+          <div class="item-card reveal d2">
+            <div class="item-img">
+              <div class="item-img-inner c3">
+                <svg
+                  class="img-icon"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#8a8a87"
+                  stroke-width="0.6"
+                >
+                  <circle cx="12" cy="12" r="8" />
+                  <circle cx="12" cy="12" r="3" />
+                  <line x1="12" y1="4" x2="12" y2="2" />
+                  <line x1="12" y1="22" x2="12" y2="20" />
+                  <line x1="4" y1="12" x2="2" y2="12" />
+                  <line x1="22" y1="12" x2="20" y2="12" />
+                </svg>
+              </div>
+              <span class="item-badge vault-badge">Vault</span>
+            </div>
+            <div class="item-info">
+              <p class="item-name">Tiffany Open Heart</p>
+              <p class="item-price">
+                ¥18,500<span class="item-price-sub">税込</span>
+              </p>
+            </div>
+          </div>
+          <div class="item-card reveal d3">
+            <div class="item-img">
+              <div class="item-img-inner c4">
+                <svg
+                  class="img-icon"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#8a8a87"
+                  stroke-width="0.6"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <span class="item-badge vault-badge">Vault</span>
+            </div>
+            <div class="item-info">
+              <p class="item-name">Tiffany Twist Knot Ring</p>
+              <p class="item-price">
+                ¥24,000<span class="item-price-sub">税込</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="about-strip">
+        <div>
+          <p class="about-label">About</p>
+          <p class="about-main-text">ものを大切に、<em>丁寧に。</em></p>
+          <a href="about.html" class="about-detail-link">詳しく見る →</a>
+        </div>
+        <div>
+          <p class="about-body-text">
+            前田工芸は、山梨を拠点とするクラフトアトリエです。Tora
+            Leatherは新たな命を革に吹き込み、Vaultは過去の輝きを現代へ繋ぎます。対照的でありながら、「素材への敬意」というひとつの信念で結ばれています。
+          </p>
+        </div>
+        <div>
+          <div class="about-stats">
+            <div>
+              <p class="stat-val">2</p>
+              <p class="stat-key">Brands</p>
+            </div>
+            <div>
+              <p class="stat-val">手仕事</p>
+              <p class="stat-key">Handcraft Only</p>
+            </div>
+            <div>
+              <p class="stat-val">山梨</p>
+              <p class="stat-key">Yamanashi Based</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="store">
+      <div class="store-bar">
+        <div>
+          <p class="store-place-label">Real Store</p>
+          <p class="store-place-name">前田工芸</p>
+        </div>
+        <div class="store-divider"></div>
+        <div class="store-info-items">
+          <div>
+            <p class="store-info-key">Address</p>
+            <p class="store-info-val">山梨県（詳細住所）</p>
+          </div>
+          <div>
+            <p class="store-info-key">Hours</p>
+            <p class="store-info-val">営業時間・定休日</p>
+          </div>
+          <div>
+            <p class="store-info-key">SNS</p>
+            <p class="store-info-val">Instagram / X</p>
+          </div>
+        </div>
+        <a
+          href="https://maps.app.goo.gl/ZKd3x46CdPvFoKef7"
+          target="_blank"
+          class="store-map-link"
+          >Google Maps →</a
+        >
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-logo">前田工芸</div>
+      <p class="footer-copy">© 2025 Maeda Kogei. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="https://toraleather.handcrafted.jp/" target="_blank"
+          >Tora Leather</a
+        >
+        <a href="https://jp.mercari.com/user/profile/304380400" target="_blank"
+          >Vault</a
+        >
+      </div>
+    </footer>
+
+    <script>
+      const reveals = document.querySelectorAll(".reveal");
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("in");
+          });
+        },
+        { threshold: 0.08, rootMargin: "0px 0px -40px 0px" },
+      );
+      reveals.forEach((el) => io.observe(el));
+
+      const kanji = document.querySelector(".hero-kanji");
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (kanji)
+            kanji.style.transform = `translateY(calc(-50% + ${window.scrollY * 0.25}px))`;
+        },
+        { passive: true },
+      );
+    </script>
+  </body>
+</html>
