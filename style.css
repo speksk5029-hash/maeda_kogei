@@ -7,14 +7,14 @@
 }
 
 :root {
-  --shikkui: #F2EDE3;
-  --washi: #EAE4D8;
-  --nuno: #D4CCBA;
+  --shikkui: #f2ede3;
+  --washi: #eae4d8;
+  --nuno: #d4ccba;
   --ki: #896644;
-  --tsuchi: #6B4E30;
-  --hai: #9A9080;
-  --sumi: #2C2418;
-  --vault-ao: #5A9498;
+  --tsuchi: #6b4e30;
+  --hai: #9a9080;
+  --sumi: #2c2418;
+  --vault-ao: #5a9498;
   --serif: "Cormorant Garamond", serif;
   --jp: "Noto Serif JP", serif;
   --gothic: "Zen Kaku Gothic New", sans-serif;
@@ -106,7 +106,7 @@ nav {
       rgba(90, 148, 152, 0.06) 0%,
       transparent 45%
     ),
-    linear-gradient(170deg, #EDE8DC 0%, #F2EDE3 60%, #F5F0E8 100%);
+    linear-gradient(170deg, #ede8dc 0%, #f2ede3 60%, #f5f0e8 100%);
 }
 .hero-bg::before {
   content: "";
@@ -339,14 +339,14 @@ nav {
 }
 .vault-panel .brand-link {
   color: var(--vault-ao);
-  border-bottom-color: rgba(90, 148, 152, 0.4);
+  border-bottom-color: rgba(82, 135, 138, 0.4);
 }
 .brand-link:hover {
   gap: 1rem;
   color: var(--tsuchi);
 }
 .vault-panel .brand-link:hover {
-  color: #3D7880;
+  color: #387178;
 }
 
 #pickup {
@@ -446,16 +446,16 @@ nav {
   transform: scale(1.03);
 }
 .c1 {
-  background: linear-gradient(145deg, #EDD5B8, #D9BC98);
+  background: linear-gradient(145deg, #edd5b8, #d9bc98);
 }
 .c2 {
-  background: linear-gradient(145deg, #E5CCA8, #CFAF85);
+  background: linear-gradient(145deg, #e5cca8, #cfaf85);
 }
 .c3 {
-  background: linear-gradient(145deg, #B8D8D6, #9EC8C4);
+  background: linear-gradient(145deg, #b8d8d6, #9ec8c4);
 }
 .c4 {
-  background: linear-gradient(145deg, #A4CCCE, #8EBBBD);
+  background: linear-gradient(145deg, #a4ccce, #8ebbbd);
 }
 .img-icon {
   opacity: 0.4;
@@ -718,7 +718,7 @@ nav {
 }
 
 footer {
-  background: var(--nuno);
+  background: #393939db;
   border-top: 1px solid rgba(44, 36, 24, 0.08);
   padding: 2rem 4vw;
   display: flex;
@@ -730,13 +730,13 @@ footer {
   font-weight: 200;
   font-size: 0.9rem;
   letter-spacing: 0.5em;
-  color: var(--sumi);
+  color: var(--washi);
 }
 .footer-copy {
   font-family: var(--gothic);
   font-size: 0.55rem;
   letter-spacing: 0.15em;
-  color: var(--hai);
+  color: var(--washi);
   opacity: 0.8;
 }
 .footer-links {
@@ -748,7 +748,7 @@ footer {
   font-size: 0.58rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--hai);
+  color: var(--washi);
   text-decoration: none;
   transition: color 0.3s;
 }
