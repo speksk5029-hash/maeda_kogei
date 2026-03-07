@@ -2,7 +2,7 @@ const PRODUCTS = [
   {
     colorClass: "c1",
     name: "SLIM WALLET《ラッフィナート》",
-    price: "¥28,000",
+    price: "¥36,800"
     badge: "前田工芸",
     badgeClass: "tora-badge",
     url: "https://toraleather.handcrafted.jp/items/122159269",
@@ -12,7 +12,7 @@ const PRODUCTS = [
   {
     colorClass: "c2",
     name: "4 KEY CASE《クラシコ》",
-    price: "¥12,000",
+    price: "¥24,800"
     badge: "前田工芸",
     badgeClass: "tora-badge",
     url: "https://toraleather.handcrafted.jp/items/122033425",
@@ -23,7 +23,7 @@ const PRODUCTS = [
   {
     colorClass: "c3",
     name: "リターントゥ IDタグ ブレスレット 喜平チェーン",
-    price: "¥18,500",
+    price: "¥41,100"
     badge: "Vault",
     badgeClass: "vault-badge",
     url: "https://jp.mercari.com/item/m96568135483",
@@ -33,7 +33,7 @@ const PRODUCTS = [
   {
     colorClass: "c4",
     name: "1837 ナローリング Ag925 #18.5",
-    price: "¥24,000",
+    price: "¥26,700"
     badge: "Vault",
     badgeClass: "vault-badge",
     url: "https://jp.mercari.com/item/m19494572579",
