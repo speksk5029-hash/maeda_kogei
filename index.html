@@ -198,6 +198,7 @@
       </div>
     </footer>
 
+    <script src="products.js"></script>
     <script>
       const io = new IntersectionObserver(
         (entries) => {
@@ -209,34 +210,28 @@
       );
       document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
-      fetch("./products.json")
-        .then((r) => r.json())
-        .then((products) => {
-          const grid = document.querySelector(".items-grid");
-          let delayIdx = 0;
-          grid.innerHTML = products
-            .map((p) => {
-              if (p.spacer) return '<div class="brand-spacer"></div>';
-              const delay = delayIdx > 0 ? ` d${delayIdx}` : "";
-              delayIdx++;
-              return `
-                <div class="item-card reveal${delay}">
-                  <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="item-img">
-                    <div class="item-img-inner ${p.colorClass}">
-                      <img src="${p.image}" alt="${p.name}" loading="lazy" />
-                      ${p.sold ? '<div class="sold-overlay">SOLD OUT</div>' : ""}
-                    </div>
-                    <span class="item-badge ${p.badgeClass}">${p.badge}</span>
-                  </a>
-                  <div class="item-info">
-                    <p class="item-name">${p.name}</p>
-                    <p class="item-price">${p.price}<span class="item-price-sub">税込</span></p>
-                  </div>
-                </div>`;
-            })
-            .join("");
-          grid.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-        });
+      const grid = document.querySelector(".items-grid");
+      let delayIdx = 0;
+      grid.innerHTML = PRODUCTS.map((p) => {
+        if (p.spacer) return '<div class="brand-spacer"></div>';
+        const delay = delayIdx > 0 ? ` d${delayIdx}` : "";
+        delayIdx++;
+        return `
+          <div class="item-card reveal${delay}">
+            <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="item-img">
+              <div class="item-img-inner ${p.colorClass}">
+                <img src="${p.image}" alt="${p.name}" loading="lazy" />
+                ${p.sold ? '<div class="sold-overlay">SOLD OUT</div>' : ""}
+              </div>
+              <span class="item-badge ${p.badgeClass}">${p.badge}</span>
+            </a>
+            <div class="item-info">
+              <p class="item-name">${p.name}</p>
+              <p class="item-price">${p.price}<span class="item-price-sub">税込</span></p>
+            </div>
+          </div>`;
+      }).join("");
+      grid.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
       const kanji = document.querySelector(".hero-kanji");
       window.addEventListener(
