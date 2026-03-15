@@ -1016,6 +1016,17 @@ footer {
 .story-section-body p + p {
   margin-top: 1.2em;
 }
+.story-section-body a {
+  color: var(--washi);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(232, 228, 218, 0.4);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+.story-section-body a:hover {
+  color: #ffffff;
+  text-decoration-color: rgba(255, 255, 255, 0.6);
+}
 
 /* Conclusion section (full-width stacked) */
 .story-section--closing .story-section-inner {
