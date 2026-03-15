@@ -251,7 +251,7 @@ nav {
 }
 .brands-wrap {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 .brand-panel {
   position: relative;
@@ -295,9 +295,6 @@ nav {
   width: 1rem;
   height: 1px;
   background: var(--terr);
-}
-.vault-tag::before {
-  background: var(--silver);
 }
 .brand-panel-name {
   font-family: var(--serif);
@@ -388,7 +385,7 @@ nav {
 
 .items-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 2.5rem 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background: rgba(255, 255, 255, 0.04);
 }
@@ -432,16 +429,16 @@ nav {
   transform: scale(1.03);
 }
 .c1 {
-  background: linear-gradient(145deg, #2c2218, #3a2d22);
+  background: linear-gradient(145deg, #1e130a, #2a1c0e);
 }
 .c2 {
-  background: linear-gradient(145deg, #261e18, #321e14);
+  background: linear-gradient(145deg, #2a1e10, #362614);
 }
 .c3 {
-  background: linear-gradient(145deg, #1a2e2e, #1f3a38);
+  background: linear-gradient(145deg, #36270f, #43311a);
 }
 .c4 {
-  background: linear-gradient(145deg, #151f20, #1c2d2d);
+  background: linear-gradient(145deg, #43331a, #503e22);
 }
 .img-icon {
   opacity: 0.18;
@@ -480,14 +477,9 @@ a.item-img {
   padding: 0.25rem 0.55rem;
   border: 1px solid;
 }
-.tora-badge {
+.maeda-badge {
   color: rgba(236, 235, 235, 0.8);
   border-color: rgba(122, 92, 74, 0.4);
-  background: rgba(22, 22, 20, 0.7);
-}
-.vault-badge {
-  color: rgba(236, 235, 235, 0.8);
-  border-color: rgba(138, 138, 135, 0.3);
   background: rgba(22, 22, 20, 0.7);
 }
 .item-info {
@@ -888,7 +880,10 @@ footer {
   text-decoration: none;
   border-bottom: 1px solid rgba(184, 180, 170, 0.35);
   padding-bottom: 0.3rem;
-  transition: color 0.3s, gap 0.3s, border-color 0.3s;
+  transition:
+    color 0.3s,
+    gap 0.3s,
+    border-color 0.3s;
 }
 .history-full-link:hover {
   color: var(--washi);
@@ -1054,7 +1049,9 @@ footer {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  transition: border-color 0.3s, color 0.3s;
+  transition:
+    border-color 0.3s,
+    color 0.3s;
 }
 .story-shop-link:hover {
   border-color: var(--nuno);
