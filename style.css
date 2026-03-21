@@ -837,23 +837,6 @@ footer {
   .hero-kanji {
     display: none;
   }
-  /* story page mobile */
-  .story-section {
-    min-height: unset;
-  }
-  .story-section-inner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .story-section--ltr .story-section-inner,
-  .story-section--rtl .story-section-inner {
-    grid-template-areas: "figure" "text";
-  }
-  .story-end-nav {
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: flex-start;
-  }
 }
 
 /* ============================================================
@@ -1067,4 +1050,36 @@ footer {
 .story-shop-link:hover {
   border-color: var(--nuno);
   color: var(--washi);
+}
+
+/* story page mobile — デスクトップ CSS より後に定義することで上書きを防ぐ */
+@media (max-width: 768px) {
+  .story-section {
+    min-height: unset;
+  }
+  .story-section-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .story-section--ltr .story-section-inner,
+  .story-section--rtl .story-section-inner {
+    grid-template-areas:
+      "header"
+      "figure"
+      "body";
+  }
+  .story-section:not(.story-section--closing) .story-text-block {
+    display: contents;
+  }
+  .story-text-header {
+    grid-area: header;
+  }
+  .story-section-body {
+    grid-area: body;
+  }
+  .story-end-nav {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
 }
