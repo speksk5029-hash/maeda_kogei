@@ -126,7 +126,17 @@
         <li><a href="index.html#history">History</a></li>
         <li><a href="index.html#store">Store</a></li>
       </ul>
+      <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
+    <div class="nav-overlay">
+      <a href="index.html#brands">Brands</a>
+      <a href="index.html#pickup">Items</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#history">History</a>
+      <a href="index.html#store">Store</a>
+    </div>
 
     <header class="privacy-hero">
       <p class="section-label">Privacy Policy</p>
@@ -269,5 +279,23 @@
         <a href="privacy.html">プライバシーポリシー</a>
       </div>
     </footer>
+    <script>
+      const hamburger = document.querySelector('.nav-hamburger');
+      const overlay = document.querySelector('.nav-overlay');
+      hamburger.addEventListener('click', () => {
+        const isOpen = hamburger.classList.toggle('open');
+        overlay.classList.toggle('open', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      overlay.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('open');
+          overlay.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', false);
+          document.body.style.overflow = '';
+        });
+      });
+    </script>
   </body>
 </html>

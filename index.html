@@ -36,7 +36,16 @@
         <li><a href="#history">History</a></li>
         <li><a href="#store">Store</a></li>
       </ul>
+      <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
+    <div class="nav-overlay">
+      <a href="#pickup">Items</a>
+      <a href="#about">About</a>
+      <a href="#history">History</a>
+      <a href="#store">Store</a>
+    </div>
 
     <section id="hero">
       <div class="hero-bg"></div>
@@ -252,6 +261,24 @@
         },
         { passive: true },
       );
+    </script>
+    <script>
+      const hamburger = document.querySelector('.nav-hamburger');
+      const overlay = document.querySelector('.nav-overlay');
+      hamburger.addEventListener('click', () => {
+        const isOpen = hamburger.classList.toggle('open');
+        overlay.classList.toggle('open', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      overlay.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('open');
+          overlay.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', false);
+          document.body.style.overflow = '';
+        });
+      });
     </script>
   </body>
 </html>
