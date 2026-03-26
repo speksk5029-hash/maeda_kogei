@@ -1248,3 +1248,70 @@ footer {
     align-items: center;
   }
 }
+
+/* ============================================================
+   Store Page (store.html)
+   ============================================================ */
+.store-detail-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.2rem 2.5rem;
+  margin-top: 2rem;
+}
+.store-detail-key {
+  font-family: var(--gothic);
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--hai);
+  padding-top: 0.15rem;
+}
+.store-detail-val {
+  font-family: var(--jp);
+  font-size: 0.8rem;
+  font-weight: 200;
+  line-height: 1.8;
+  color: var(--nuno);
+}
+.store-detail-val a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.store-detail-val a:hover {
+  color: var(--washi);
+}
+.store-map-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: 2rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+.store-map-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.store-map-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .store-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+  .store-detail-key {
+    margin-top: 1rem;
+  }
+  .store-detail-key:first-child {
+    margin-top: 0;
+  }
+  .store-map-wrap {
+    aspect-ratio: 4 / 3;
+  }
+}
