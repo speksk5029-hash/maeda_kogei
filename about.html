@@ -35,7 +35,11 @@
         <li><a href="history.html">History</a></li>
         <li><a href="store.html">Store</a></li>
       </ul>
-      <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false">
+      <button
+        class="nav-hamburger"
+        aria-label="メニューを開く"
+        aria-expanded="false"
+      >
         <span></span><span></span><span></span>
       </button>
     </nav>
@@ -53,16 +57,13 @@
     </header>
 
     <main>
-
       <!-- 01: ブランドについて -->
       <section class="about-prose-section">
         <div class="about-prose-inner">
           <p class="section-label reveal">Brand</p>
           <h2 class="story-section-title reveal d1">ブランドについて</h2>
           <div class="story-section-body reveal d2">
-            <p>
-              前田工芸は、山梨県富士吉田市にある革製品の工房です。
-            </p>
+            <p>前田工芸は、山梨県富士吉田市にある革製品の工房です。</p>
             <p>
               革に触れ、手を動かすことが好きで、この仕事を続けています。
               人が訪れ、少し賑やかになるこの場所もまた、ものづくりの一部だと思っています。
@@ -75,7 +76,9 @@
       <section class="about-prose-section about-prose-section--alt">
         <div class="about-prose-inner">
           <p class="section-label reveal">Craft</p>
-          <h2 class="story-section-title reveal d1">ものづくりへの<em>想い</em></h2>
+          <h2 class="story-section-title reveal d1">
+            ものづくりへの<em>想い</em>
+          </h2>
           <div class="story-section-body reveal d2">
             <p>
               12歳の頃、経年変化していくヌメ革に惹かれたことが、ものづくりの始まりでした。
@@ -105,7 +108,9 @@
       <section class="about-prose-section">
         <div class="about-prose-inner">
           <p class="section-label reveal">Material &amp; Technique</p>
-          <h2 class="story-section-title reveal d1">素材と技への<em>こだわり</em></h2>
+          <h2 class="story-section-title reveal d1">
+            素材と技への<em>こだわり</em>
+          </h2>
 
           <div class="about-prose-subsection story-section-body reveal d1">
             <p class="about-prose-sub-label">Leather</p>
@@ -139,7 +144,6 @@
           <p class="section-label reveal">Workshop</p>
           <h2 class="story-section-title reveal d1">作業<em>風景</em></h2>
           <div class="about-craft-grid">
-
             <figure class="about-craft-item reveal">
               <div class="about-craft-img-wrap">
                 <!-- <img class="about-craft-img" loading="lazy" src="img/workshop-01.jpg" alt="型紙をつくり、革を裁断する工程"> -->
@@ -175,29 +179,30 @@
                 ひとつずつの工程を積み重ねていくことで、形になっていきます。
               </figcaption>
             </figure>
-
           </div>
         </div>
       </section>
 
       <!-- 05: 締め -->
-      <section class="about-prose-section about-prose-section--alt about-prose-section--closing">
+      <section
+        class="about-prose-section about-prose-section--alt about-prose-section--closing"
+      >
         <div class="about-prose-inner">
           <div class="story-section-body reveal">
-            <p>
-              実際に手に取り、使いながら感じてもらえたら嬉しいです。
-            </p>
-            <p>
-              お近くにお越しの際は、ぜひお立ち寄りください。
-            </p>
+            <p>実際に手に取り、使いながら感じてもらえたら嬉しいです。</p>
+            <p>お近くにお越しの際は、ぜひお立ち寄りください。</p>
           </div>
           <div class="about-closing-links reveal d1">
-            <a href="https://toraleather.handcrafted.jp/" class="story-shop-link" target="_blank">Shop →</a>
+            <a
+              href="https://toraleather.handcrafted.jp/"
+              class="story-shop-link"
+              target="_blank"
+              >Online Shop →</a
+            >
             <a href="store.html" class="history-full-link">店舗情報を見る →</a>
           </div>
         </div>
       </section>
-
     </main>
 
     <div class="story-end-nav section-inner">
@@ -210,7 +215,9 @@
       <p class="footer-copy">© 2026 Maeda Kogei. All rights reserved.</p>
       <div class="footer-links">
         <a href="#">Instagram</a>
-        <a href="https://toraleather.handcrafted.jp/" target="_blank">前田工芸</a>
+        <a href="https://toraleather.handcrafted.jp/" target="_blank"
+          >前田工芸</a
+        >
         <a href="privacy.html">プライバシーポリシー</a>
       </div>
     </footer>
@@ -227,20 +234,20 @@
       document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
     </script>
     <script>
-      const hamburger = document.querySelector('.nav-hamburger');
-      const overlay = document.querySelector('.nav-overlay');
-      hamburger.addEventListener('click', () => {
-        const isOpen = hamburger.classList.toggle('open');
-        overlay.classList.toggle('open', isOpen);
-        hamburger.setAttribute('aria-expanded', isOpen);
-        document.body.style.overflow = isOpen ? 'hidden' : '';
+      const hamburger = document.querySelector(".nav-hamburger");
+      const overlay = document.querySelector(".nav-overlay");
+      hamburger.addEventListener("click", () => {
+        const isOpen = hamburger.classList.toggle("open");
+        overlay.classList.toggle("open", isOpen);
+        hamburger.setAttribute("aria-expanded", isOpen);
+        document.body.style.overflow = isOpen ? "hidden" : "";
       });
-      overlay.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          hamburger.classList.remove('open');
-          overlay.classList.remove('open');
-          hamburger.setAttribute('aria-expanded', false);
-          document.body.style.overflow = '';
+      overlay.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("open");
+          overlay.classList.remove("open");
+          hamburger.setAttribute("aria-expanded", false);
+          document.body.style.overflow = "";
         });
       });
     </script>
