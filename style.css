@@ -936,6 +936,26 @@ footer {
   border-color: var(--washi);
 }
 
+/* Journal section */
+#journal {
+  background: var(--tetsu);
+  padding: 5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+.journal-body {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 600px;
+}
+.journal-text {
+  font-size: 0.85rem;
+  line-height: 2.2;
+  color: var(--nuno);
+  font-weight: 200;
+}
+
 /* Page hero */
 .story-hero {
   background: var(--sumi);
