@@ -362,20 +362,22 @@ nav {
 .story-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  gap: 10px;
 }
 .story-card {
   display: block;
   background: var(--sumi);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   text-decoration: none;
   color: inherit;
   overflow: hidden;
-  transition: background 0.3s;
+  transition:
+    background 0.3s,
+    border-color 0.3s;
 }
 .story-card:hover {
   background: var(--tetsu);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 .story-card-img-wrap {
   aspect-ratio: 16 / 9;
