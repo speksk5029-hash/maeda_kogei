@@ -102,7 +102,13 @@ nav {
       rgba(110, 107, 98, 0.07) 0%,
       transparent 45%
     ),
-    linear-gradient(170deg, #1a1916 0%, #161614 60%, #111110 100%);
+    linear-gradient(
+      170deg,
+      rgba(26, 25, 22, 0.88) 0%,
+      rgba(22, 22, 20, 0.85) 60%,
+      rgba(17, 17, 16, 0.93) 100%
+    ),
+    url("img/hero-bg.jpg") center / cover no-repeat;
 }
 .hero-bg::before {
   content: "";
@@ -321,7 +327,7 @@ nav {
 .brand-panel-desc {
   font-size: 0.82rem;
   line-height: 2;
-  color: var(--hai);
+  color: var(--nuno);
   font-weight: 200;
   margin-bottom: 2rem;
   max-width: 380px;
@@ -411,7 +417,7 @@ nav {
 .story-card-text {
   font-size: 0.78rem;
   line-height: 2;
-  color: var(--hai);
+  color: var(--nuno);
   font-weight: 200;
   margin-bottom: 1.4rem;
 }
@@ -833,6 +839,28 @@ footer {
   .story-cards {
     grid-template-columns: 1fr;
   }
+  .journal-cards {
+    grid-template-columns: 1fr;
+  }
+  /* 可読性: 本文をわずかに拡大 */
+  .story-card-text,
+  .brand-panel-desc,
+  .journal-text {
+    font-size: 0.85rem;
+  }
+  .story-section-body {
+    font-size: 0.88rem;
+  }
+  /* タップ領域: 見た目を変えずにリンクの当たり判定を上方向へ拡大 */
+  .hero-cta:not(.hero-cta--primary),
+  .section-all-link,
+  .history-full-link {
+    padding-top: 0.8rem;
+    margin-top: -0.8rem;
+  }
+  .shop-note {
+    text-align: left;
+  }
   .items-grid .brand-spacer {
     display: none;
   }
@@ -914,6 +942,75 @@ footer {
   line-height: 2.2;
   color: var(--nuno);
   font-weight: 200;
+}
+.journal-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 2.5rem;
+}
+.journal-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--tetsu);
+  padding: 1.8rem 2rem 2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.3s;
+}
+.journal-card:hover {
+  background: var(--koke);
+}
+.journal-card-label {
+  font-family: var(--gothic);
+  font-size: 0.55rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--hai);
+  margin-bottom: 0.9rem;
+}
+.journal-card-title {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.4rem;
+  flex: 1;
+}
+.journal-card-link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--gothic);
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--nuno);
+  border-bottom: 1px solid rgba(184, 180, 170, 0.35);
+  padding-bottom: 0.3rem;
+  transition:
+    color 0.3s,
+    gap 0.3s,
+    border-color 0.3s;
+}
+.journal-card:hover .journal-card-link {
+  color: var(--washi);
+  gap: 1rem;
+  border-color: var(--washi);
+}
+
+/* External-shop notice */
+.shop-note {
+  font-family: var(--gothic);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--hai);
+  text-align: right;
+  margin-top: 0.9rem;
 }
 
 /* Page hero */
@@ -1034,7 +1131,7 @@ footer {
 .story-section-body {
   font-size: 0.84rem;
   line-height: 2.4;
-  color: var(--hai);
+  color: var(--nuno);
   font-weight: 200;
   letter-spacing: 0.04em;
 }
