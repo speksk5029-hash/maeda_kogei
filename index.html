@@ -4,6 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>前田工芸 | Maeda Kogei</title>
+    <meta
+      name="description"
+      content="山梨県富士吉田市の革工房「前田工芸」。六代続く職人の家系に生まれた手仕事。トスカーナ産イタリアンレザーを一針ずつ手縫いで仕立てる財布・革小物をお届けします。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="前田工芸 | Maeda Kogei" />
+    <meta property="og:title" content="前田工芸 | Maeda Kogei — 山梨県富士吉田市の革工房" />
+    <meta
+      property="og:description"
+      content="六代続く職人の家系に生まれた手仕事。時を重ねて美しくなる革製品を、富士山の麓からお届けします。"
+    />
+    <meta property="og:url" content="https://maedakogei.com/" />
+    <meta property="og:image" content="https://maedakogei.com/img/workshop-01.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -32,8 +46,8 @@
       <ul class="nav-links">
         <!-- <li><a href="#brands">Brands</a></li> -->
         <li><a href="#pickup">Items</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="history.html">History</a></li>
+        <li><a href="about.html" data-loc="nav">About</a></li>
+        <li><a href="history.html" data-loc="nav">Story</a></li>
         <li><a href="store.html">Store</a></li>
       </ul>
       <button class="nav-hamburger" aria-label="メニューを開く" aria-expanded="false">
@@ -42,8 +56,8 @@
     </nav>
     <div class="nav-overlay">
       <a href="#pickup">Items</a>
-      <a href="about.html">About</a>
-      <a href="history.html">History</a>
+      <a href="about.html" data-loc="nav-overlay">About</a>
+      <a href="history.html" data-loc="nav-overlay">Story</a>
       <a href="store.html">Store</a>
     </div>
 
@@ -57,6 +71,12 @@
         <p class="hero-tagline">
           山梨県富士吉田市に店を構える前田工芸。<br />時を重ねて美しくなるものを扱っています。
         </p>
+        <div class="hero-cta-group">
+          <a href="#pickup" class="hero-cta hero-cta--primary">商品を見る →</a>
+          <a href="history.html" class="hero-cta" data-loc="hero"
+            >六代の物語 →</a
+          >
+        </div>
       </div>
       <div class="scroll-indicator">
         <span>Scroll</span>
@@ -77,8 +97,61 @@
             href="https://toraleather.handcrafted.jp/"
             class="brand-link"
             target="_blank"
+            rel="noopener noreferrer"
+            data-loc="brand-panel"
             >Shop →</a
           >
+        </div>
+      </div>
+    </section>
+
+    <section id="story">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <p class="section-label reveal">Brand Story</p>
+            <h2 class="section-title reveal d1">物語を知る</h2>
+          </div>
+        </div>
+        <div class="story-cards">
+          <a href="about.html" class="story-card reveal" data-loc="story-cards">
+            <div class="story-card-img-wrap">
+              <img
+                src="img/workshop-03.jpg"
+                alt="手縫いで革を仕立てる作業風景"
+                loading="lazy"
+              />
+            </div>
+            <div class="story-card-body">
+              <p class="story-card-label">About</p>
+              <p class="story-card-title">もの<em>に込める</em>おもい。</p>
+              <p class="story-card-text">
+                代々の彫金職人の家に生まれ、12歳の時、革問屋で運命の出会いを果たしました。空間を満たす革の匂い、未知の道具たちが放つオーラ——あの日の感動を、手仕事の革製品としてお裾分けしています。素材と技、工房のことをご紹介します。
+              </p>
+              <span class="story-card-link">詳しく見る →</span>
+            </div>
+          </a>
+          <a
+            href="history.html"
+            class="story-card reveal d1"
+            data-loc="story-cards"
+          >
+            <div class="story-card-img-wrap">
+              <img
+                src="img/ggf-roof.jpg"
+                alt="寺社仏閣の屋根を手がけた前田家の職人たち"
+                loading="lazy"
+              />
+            </div>
+            <div class="story-card-body">
+              <p class="story-card-label">Our Roots</p>
+              <p class="story-card-title">前田家の歴史</p>
+              <p class="story-card-text">
+                江戸時代後期より富士吉田に根を下ろし、寺社仏閣の屋根を手がけてきた職人の家系。北口本宮冨士浅間神社の欄干には、今もその名が刻まれています。形は変われど、変わらぬ手仕事——六代の歴史が革に息づいています。
+              </p>
+              <span class="story-card-link">六代の物語を読む →</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -93,81 +166,21 @@
           <a
             href="https://toraleather.handcrafted.jp/"
             class="section-all-link reveal"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-loc="pickup-header"
             >全商品を見る →</a
           >
         </div>
         <div class="items-grid"></div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="about-strip">
-        <div>
-          <p class="about-label">About</p>
-          <p class="about-main-text">もの<em>に込める</em><br />おもい。</p>
-          <a href="about.html" class="about-detail-link">詳しく見る →</a>
-        </div>
-        <div>
-          <p class="about-body-text">
-            私は、2004年2月3日、代々の彫金職人の家に生まれ、幼い頃からものづくりと共に育ちました。
-            <br />革製品との運命の出会いは12歳の時。お年玉を固く握りしめ、緊張とともに入った革問屋の光景は今も目に焼き付いています。空間を満たす革の匂い、そして未知の道具たちが放つオーラに、深く心を打たれました。
-            <br />私がその時覚えた感動を、手作業で仕立てる革製品という形にして、皆さまにお裾分けできれば嬉しいです。
-          </p>
-        </div>
-        <div>
-          <div class="about-stats">
-            <div>
-              <p class="stat-val">1</p>
-              <p class="stat-key">Brand</p>
-            </div>
-            <div>
-              <p class="stat-val">手仕事</p>
-              <p class="stat-key">Handcraft Only</p>
-            </div>
-            <div>
-              <p class="stat-val">山梨</p>
-              <p class="stat-key">Yamanashi Based</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="history">
-      <div class="section-inner">
-        <div class="section-header">
-          <div>
-            <p class="section-label reveal">Our Roots</p>
-            <h2 class="section-title reveal d1">前田家の歴史</h2>
-          </div>
-        </div>
-        <div class="history-content">
-          <div class="history-aside reveal">
-            形は変われど<br /><em>変わらぬ手仕事。</em><br />
-            六代の歴史が革に息づく。
-          </div>
-          <div class="history-entries">
-            <div class="history-entry reveal d1">
-              <p class="history-year">— 江戸時代</p>
-              <p class="history-title">
-                富士の信仰を守り継いだ「手仕事」の原点
-              </p>
-              <p class="history-text">
-                江戸時代後期より富士吉田に根を下ろし、寺社仏閣の屋根を専門に手がけてきた前田家の板金職人たち。硬い金属に熱と技で優美な曲線を引く「素材と対話する姿勢」は、北口本宮冨士浅間神社の欄干に今もその名を刻み、誇り高き職人の精神として息づいています。
-              </p>
-            </div>
-            <div class="history-entry reveal d2">
-              <p class="history-year">— 現代</p>
-              <p class="history-title">前田工芸の創業</p>
-              <p class="history-text">
-                山梨・富士吉田の地で、先人から受け継いだ「素材への敬意」を形に。時を経て味わいを増す革を通じて、長く寄り添い、美しく変化していく手仕事の美学を伝え続けています。
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="history-more reveal d2">
-          <a href="history.html" class="history-full-link"
-            >六代の物語を読む →</a
+        <div class="history-more reveal">
+          <a
+            href="https://toraleather.handcrafted.jp/"
+            class="history-full-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-loc="pickup-bottom"
+            >オンラインショップで全商品を見る →</a
           >
         </div>
       </div>
@@ -234,7 +247,11 @@
       <p class="footer-copy">© 2026 Maeda Kogei. All rights reserved.</p>
       <div class="footer-links">
         <!-- <a href="#">Instagram</a> -->
-        <a href="https://toraleather.handcrafted.jp/" target="_blank"
+        <a
+          href="https://toraleather.handcrafted.jp/"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-loc="footer"
           >前田工芸</a
         >
         <a href="privacy.html">プライバシーポリシー</a>
@@ -242,6 +259,7 @@
     </footer>
 
     <script src="products.js"></script>
+    <script src="analytics.js"></script>
     <script>
       const io = new IntersectionObserver(
         (entries) => {
@@ -261,7 +279,7 @@
         delayIdx++;
         return `
           <div class="item-card reveal${delay}">
-            <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="item-img">
+            <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="item-img" data-loc="pickup-item" data-item="${p.name}">
               <div class="item-img-inner ${p.colorClass}">
                 <img src="${p.image}" alt="${p.name}" loading="lazy" />
                 ${p.sold ? '<div class="sold-overlay">SOLD OUT</div>' : ""}

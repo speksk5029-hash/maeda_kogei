@@ -4,6 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>前田工芸 | About</title>
+    <meta
+      name="description"
+      content="前田工芸のものづくりへの想い。12歳で革に出会い、手縫いにこだわり続ける理由。イタリアンレザーの素材選びと、山梨県富士吉田市の工房の日々をご紹介します。"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="前田工芸 | Maeda Kogei" />
+    <meta property="og:title" content="ものに込めるおもい | 前田工芸" />
+    <meta
+      property="og:description"
+      content="12歳で革に出会い、手縫いにこだわり続ける理由。素材と技、工房の日々。"
+    />
+    <meta property="og:url" content="https://maedakogei.com/about.html" />
+    <meta property="og:image" content="https://maedakogei.com/img/workshop-03.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -31,8 +45,8 @@
       <a href="index.html" class="nav-logo">前田工芸</a>
       <ul class="nav-links">
         <li><a href="index.html#pickup">Items</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="history.html">History</a></li>
+        <li><a href="about.html" data-loc="nav">About</a></li>
+        <li><a href="history.html" data-loc="nav">Story</a></li>
         <li><a href="store.html">Store</a></li>
       </ul>
       <button
@@ -45,8 +59,8 @@
     </nav>
     <div class="nav-overlay">
       <a href="index.html#pickup">Items</a>
-      <a href="about.html">About</a>
-      <a href="history.html">History</a>
+      <a href="about.html" data-loc="nav-overlay">About</a>
+      <a href="history.html" data-loc="nav-overlay">Story</a>
       <a href="store.html">Store</a>
     </div>
 
@@ -206,6 +220,7 @@
       <!-- 05: 締め -->
       <section
         class="about-prose-section about-prose-section--alt about-prose-section--closing"
+        data-read-goal="about"
       >
         <div class="about-prose-inner">
           <div class="story-section-body reveal">
@@ -217,6 +232,8 @@
               href="https://toraleather.handcrafted.jp/"
               class="story-shop-link"
               target="_blank"
+              rel="noopener noreferrer"
+              data-loc="story-end"
               >Online Shop →</a
             >
             <a href="store.html" class="history-full-link">店舗情報を見る →</a>
@@ -227,21 +244,28 @@
 
     <div class="story-end-nav section-inner">
       <a href="index.html" class="history-full-link">← ホームへ戻る</a>
-      <a href="history.html" class="story-shop-link">六代の歴史を読む →</a>
+      <a href="history.html" class="story-shop-link" data-loc="end-nav"
+        >六代の歴史を読む →</a
+      >
     </div>
 
     <footer>
       <div class="footer-logo">前田工芸</div>
       <p class="footer-copy">© 2026 Maeda Kogei. All rights reserved.</p>
       <div class="footer-links">
-        <a href="#">Instagram</a>
-        <a href="https://toraleather.handcrafted.jp/" target="_blank"
+        <!-- <a href="#">Instagram</a> -->
+        <a
+          href="https://toraleather.handcrafted.jp/"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-loc="footer"
           >前田工芸</a
         >
         <a href="privacy.html">プライバシーポリシー</a>
       </div>
     </footer>
 
+    <script src="analytics.js"></script>
     <script>
       const io = new IntersectionObserver(
         (entries) => {

@@ -206,6 +206,20 @@ nav {
   gap: 1.3rem;
   border-color: var(--washi);
 }
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.hero-cta--primary {
+  border: 1px solid rgba(184, 180, 170, 0.35);
+  padding: 0.85rem 1.6rem;
+}
+.hero-cta--primary:hover {
+  border-color: var(--washi);
+  background: rgba(232, 228, 218, 0.06);
+}
 
 .scroll-indicator {
   position: absolute;
@@ -333,6 +347,95 @@ nav {
   color: var(--washi);
 }
 
+/* Story teaser cards (index) */
+#story {
+  background: var(--sumi);
+  padding: 5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+.story-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+.story-card {
+  display: block;
+  background: var(--sumi);
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+.story-card:hover {
+  background: var(--tetsu);
+}
+.story-card-img-wrap {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.story-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.85);
+  transition: transform 0.6s ease;
+}
+.story-card:hover .story-card-img-wrap img {
+  transform: scale(1.03);
+}
+.story-card-body {
+  padding: 1.6rem 1.8rem 2rem;
+}
+.story-card-label {
+  font-family: var(--gothic);
+  font-size: 0.55rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--hai);
+  margin-bottom: 0.8rem;
+}
+.story-card-title {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.8rem;
+}
+.story-card-title em {
+  font-style: italic;
+  color: var(--nuno);
+}
+.story-card-text {
+  font-size: 0.78rem;
+  line-height: 2;
+  color: var(--hai);
+  font-weight: 200;
+  margin-bottom: 1.4rem;
+}
+.story-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--gothic);
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--nuno);
+  border-bottom: 1px solid rgba(184, 180, 170, 0.35);
+  padding-bottom: 0.3rem;
+  transition:
+    color 0.3s,
+    gap 0.3s,
+    border-color 0.3s;
+}
+.story-card:hover .story-card-link {
+  color: var(--washi);
+  gap: 1rem;
+  border-color: var(--washi);
+}
 #pickup {
   background: var(--sumi);
   padding: 5rem 0;
@@ -504,140 +607,6 @@ a.item-img {
   color: var(--hai);
   margin-left: 0.3rem;
   letter-spacing: 0.1em;
-}
-
-#about {
-  background: var(--koke);
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-}
-.about-strip {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-}
-.about-strip > * {
-  padding: 3.5rem 3.5vw;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
-}
-.about-strip > *:last-child {
-  border-right: none;
-}
-.about-label {
-  font-family: var(--gothic);
-  font-size: 0.58rem;
-  letter-spacing: 0.45em;
-  text-transform: uppercase;
-  color: rgba(226, 223, 213, 0.7);
-  margin-bottom: 1rem;
-}
-.about-main-text {
-  font-family: var(--serif);
-  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  font-weight: 300;
-  line-height: 1.5;
-  letter-spacing: 0.03em;
-}
-.about-main-text em {
-  font-style: italic;
-  color: var(--nuno);
-}
-.about-body-text {
-  font-size: 0.8rem;
-  line-height: 2.2;
-  color: var(--hai);
-  font-weight: 200;
-}
-.about-detail-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--gothic);
-  font-size: 0.58rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--nuno);
-  text-decoration: none;
-  margin-top: 1.5rem;
-  border-bottom: 1px solid rgba(226, 223, 213, 0.7);
-  padding-bottom: 0.25rem;
-  transition:
-    color 0.3s,
-    gap 0.3s;
-}
-.about-detail-link:hover {
-  color: var(--washi);
-  gap: 0.9rem;
-}
-.about-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 1.8rem;
-}
-.stat-val {
-  font-family: var(--serif);
-  font-size: 1.6rem;
-  font-weight: 300;
-  color: var(--nuno);
-  line-height: 1;
-  margin-bottom: 0.3rem;
-}
-.stat-key {
-  font-family: var(--gothic);
-  font-size: 0.55rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--hai);
-}
-
-#history {
-  background: var(--sumi);
-  padding: 5rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
-}
-.history-content {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 5rem;
-  margin-top: 2.5rem;
-}
-.history-aside {
-  font-family: var(--serif);
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
-  font-weight: 300;
-  line-height: 1.8;
-  letter-spacing: 0.04em;
-}
-.history-aside em {
-  font-style: italic;
-  color: var(--nuno);
-}
-.history-entries {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
-.history-entry {
-  padding-left: 1.5rem;
-  border-left: 1px solid rgba(184, 180, 170, 0.2);
-}
-.history-year {
-  font-family: var(--serif);
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  color: var(--nuno);
-  margin-bottom: 0.4rem;
-}
-.history-title {
-  font-family: var(--serif);
-  font-size: 1.1rem;
-  font-weight: 300;
-  margin-bottom: 0.6rem;
-}
-.history-text {
-  font-size: 0.82rem;
-  line-height: 2.2;
-  color: var(--hai);
-  font-weight: 200;
 }
 
 #store {
@@ -861,20 +830,11 @@ footer {
   .items-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .story-cards {
+    grid-template-columns: 1fr;
+  }
   .items-grid .brand-spacer {
     display: none;
-  }
-  .about-strip {
-    grid-template-columns: 1fr;
-  }
-  .about-strip > * {
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 2.5rem 5vw;
-  }
-  .history-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
   }
   .store-bar {
     flex-direction: column;
@@ -905,7 +865,7 @@ footer {
    Brand Story Page (history.html)
    ============================================================ */
 
-/* Link in index.html history section */
+/* Section-bottom text link (pickup / journal / story pages) */
 .history-more {
   display: flex;
   justify-content: flex-end;

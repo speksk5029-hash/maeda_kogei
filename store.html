@@ -8,6 +8,16 @@
       name="description"
       content="前田工芸の店舗情報。山梨県富士吉田市の革工房。住所・営業時間・アクセス方法をご案内します。"
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="前田工芸 | Maeda Kogei" />
+    <meta property="og:title" content="店舗情報 | 前田工芸" />
+    <meta
+      property="og:description"
+      content="山梨県富士吉田市の革工房。住所・営業時間・アクセス方法をご案内します。"
+    />
+    <meta property="og:url" content="https://maedakogei.com/store.html" />
+    <meta property="og:image" content="https://maedakogei.com/img/workshop-01.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -61,8 +71,8 @@
       <a href="index.html" class="nav-logo">前田工芸</a>
       <ul class="nav-links">
         <li><a href="index.html#pickup">Items</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="history.html">History</a></li>
+        <li><a href="about.html" data-loc="nav">About</a></li>
+        <li><a href="history.html" data-loc="nav">Story</a></li>
         <li><a href="store.html">Store</a></li>
       </ul>
       <button
@@ -75,8 +85,8 @@
     </nav>
     <div class="nav-overlay">
       <a href="index.html#pickup">Items</a>
-      <a href="about.html">About</a>
-      <a href="history.html">History</a>
+      <a href="about.html" data-loc="nav-overlay">About</a>
+      <a href="history.html" data-loc="nav-overlay">Story</a>
       <a href="store.html">Store</a>
     </div>
 
@@ -196,6 +206,8 @@
               href="https://toraleather.handcrafted.jp/"
               class="story-shop-link"
               target="_blank"
+              rel="noopener noreferrer"
+              data-loc="store-products"
               >オンラインショップ →</a
             >
           </div>
@@ -224,20 +236,27 @@
 
     <div class="story-end-nav section-inner">
       <a href="index.html" class="history-full-link">← ホームへ戻る</a>
-      <a href="about.html" class="story-shop-link">前田工芸について →</a>
+      <a href="about.html" class="story-shop-link" data-loc="end-nav"
+        >前田工芸について →</a
+      >
     </div>
 
     <footer>
       <div class="footer-logo">前田工芸</div>
       <p class="footer-copy">© 2026 Maeda Kogei. All rights reserved.</p>
       <div class="footer-links">
-        <a href="https://toraleather.handcrafted.jp/" target="_blank"
+        <a
+          href="https://toraleather.handcrafted.jp/"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-loc="footer"
           >前田工芸</a
         >
         <a href="privacy.html">プライバシーポリシー</a>
       </div>
     </footer>
 
+    <script src="analytics.js"></script>
     <script>
       const io = new IntersectionObserver(
         (entries) => {
