@@ -38,7 +38,7 @@
       gtag("js", new Date());
       gtag("config", "G-6QFMMXG3V5");
     </script>
-    <link rel="stylesheet" href="style.css?v=20260902" />
+    <link rel="stylesheet" href="style.css?v=20260905" />
   </head>
   <body>
     <nav class="nav--hero">
@@ -102,7 +102,7 @@
         <h1 class="hero-title">Made<br /><em>With</em><br />Time</h1>
         <p class="hero-subtitle-jp">時間とともに作られる</p>
         <p class="hero-tagline">
-          山梨県富士吉田市、革工房を併設した革製品店。<br />売場の奥で、一針ずつ手仕事を重ねています。
+          山梨県富士吉田市の革製品店。<br />売場の奥の工房から、一針ずつ縫い上げた革小物が並びます。
         </p>
       </div>
       <div class="scroll-indicator">
@@ -116,7 +116,7 @@
         <div class="brand-panel reveal">
           <div class="brand-panel-num">01</div>
           <p class="brand-panel-tag">About Maeda Kogei</p>
-          <h2 class="brand-panel-name">ものに込める、おもい。</h2>
+          <h2 class="brand-panel-name">時間とともに、完成する。</h2>
           <p class="brand-panel-desc">
             六代続く職人の家に生まれ、12歳で出会った革の魅力を、いま富士吉田の店と工房から届けています。使う人の時間とともに育つものを、一針ずつ丁寧に仕立てます。
           </p>
@@ -274,7 +274,7 @@
       </div>
     </footer>
 
-    <script src="products.js"></script>
+    <script src="products.js?v=20260905"></script>
     <script src="analytics.js?v=20260708"></script>
     <script>
       const io = new IntersectionObserver(
@@ -298,6 +298,7 @@
       heroNavObserver.observe(hero);
 
       const grid = document.querySelector(".items-grid");
+      grid.classList.toggle("items-grid--pair", PRODUCTS.length === 2);
       let delayIdx = 0;
       grid.innerHTML = PRODUCTS.map((p) => {
         if (p.spacer) return '<div class="brand-spacer"></div>';
