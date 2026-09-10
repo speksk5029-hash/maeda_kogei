@@ -15,7 +15,7 @@
   }
 
   function shopTarget(href) {
-    if (href.indexOf("toraleather.handcrafted.jp") !== -1) return "base";
+    if (href.indexOf("shop.maedakogei.com") !== -1) return "base";
     if (href.indexOf("jp.mercari.com") !== -1) return "mercari";
     return null;
   }
